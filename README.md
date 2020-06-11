@@ -1,27 +1,136 @@
-# NgRoughNotation
+# ng-rough-notation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+![Banner](https://i.imgur.com/bBH3m5W.png)
 
-## Development server
+Simple and configurable directive to annotate an element.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is an Angular 9 wrapper for [rough-notation](https://roughnotation.com).
 
-## Code scaffolding
+[TOC]
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Demo
 
-## Build
+[Demo page](https://ng-rough-notation-demo.stackblitz.io/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+[StackBlitz sandbox](https://stackblitz.com/edit/ng-rough-notation-demo)
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install ng-rough-notation
+```
 
-## Running end-to-end tests
+Add `RoughNotationModule` to your module imports :
+``` typescript
+import { RoughNotationModule } from 'ng-rough-notation';
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+@NgModule({
+    ...
+    imports: [RoughNotationModule],
+})
+export class AppModule {}
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Usage
+
+Use the `roughNotation` directive on any element :
+
+ ``` html
+<span roughNotation>Some content</span>
+ ```
+
+#### Config object
+
+You can provide a configuration object to the directive.
+
+ ``` html
+<span [roughNotation]="{ type: 'highlight', color: '#F44336' }"></span>
+ ```
+
+The config object should represent a partial [RoughAnnotationConfigBase](https://github.com/pshihn/rough-notation/blob/979cdd33d8825df4e0124de17e4e2433e1f6e4a6/src/model.ts#L16) interface.
+
+*Every property is optional since a default config is predefined.*
+
+| Property          | Type                                                         | Default value                             |
+| ----------------- | ------------------------------------------------------------ | ----------------------------------------- |
+| type              | `'underline' | 'box' | 'circle' | 'highlight' | 'strike-through' | 'crossed-off'` | `'highlight'`                             |
+| animate           | `boolean`                                                    | `true`                                    |
+| animationDuration | `number`                                                     | `800`                                     |
+| animationDelay    | `number`                                                     | `0`                                       |
+| color             | `string`                                                     | See [Automatic colors](#automatic-colors) |
+| strokeWidth       | `number`                                                     | `1`                                       |
+| padding           | `number | [number, number] | [number, number, number, number]` | `5`                                       |
+| iterations        | `number`                                                     | `2`                                       |
+
+Please refer to the official doc for [property descriptions](https://github.com/pshihn/rough-notation#configuring-the-annotation).
+
+#### Inputs
+
+| Name                   | Type      | Default value | Description                                                  |
+| ---------------------- | --------- | ------------- | ------------------------------------------------------------ |
+| **annotateOnInit**     | `boolean` | `true`        | Specify if you want the element to be annotated when initialized. |
+| **annotatedTextColor** | `boolean` | `true`        | Specify the CSS `color` value the element should have <u>only when it is annotated</u>. <br />Returns to its original color when the annotation is hidden. |
+
+#### Outputs
+
+| Name                | Type                    | Description                                          |
+| ------------------- | ----------------------- | ---------------------------------------------------- |
+| **isShowingChange** | `EventEmitter<boolean>` | Triggers each time the annotation visibility changes |
+
+#### Instance
+
+You can get a reference to the `RoughNotationDirective` instance.
+
+```html
+<span roughNotation #instance="roughNotation"></span>
+```
+
+This is useful if you want to toggle programmatically the annotation.
+
+| Method       | Description                                                 |
+| ------------ | ----------------------------------------------------------- |
+| **toggle()** | Shows or hide the annotation according to its current state |
+
+## Automatic colors
+
+A set of default colors is defined for each annonation *type*. It follows the scheme on the [original website](https://roughnotation.com) so you can omit the *color* property if you're happy with the defaults. 
+
+| Type           | Default color                                |
+| :------------- | -------------------------------------------- |
+| highlight      | <span style="color:#FFF176">`#FFF176`</span> |
+| circle         | <span style="color:#0D47A1">`#0D47A1`</span> |
+| box            | <span style="color:#4A148C">`#4A148C`</span> |
+| strike-through | <span style="color:#1B5E1F">`#1B5E1F`</span> |
+| underline      | <span style="color:#B71C1B">`#B71C1B`</span> |
+| crossed-off    | <span style="color:#F57F17">`#F57F17`</span> |
+
+## Global configuration
+
+You can provide a global default configuration for the whole module.
+
+For that you can use the `forRoot()` method on the module.
+
+```typescript
+RoughNotationModule.forRoot({
+	type: 'circle',
+  animationDuration: 1000,
+})
+```
+
+*Note: this global configuration will be overriden by the configurations provided to the `roughNotation` directives.*
+
+## Annotation group
+
+You can use the `rough-notation-group` component to wrap and toggle a bunch of annotations.
+
+```html
+<rough-notation-group [show]="showGroup">
+   <div>
+      <span roughNotation>First annotation</span>
+   </div>
+   <div>
+      <span [roughNotation]="{ type: 'underline' }">Second annotation</span>
+   </div>
+</rough-notation-group>
+```

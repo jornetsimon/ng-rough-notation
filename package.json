@@ -1,6 +1,6 @@
 {
-  "name": "ng-rough-notation",
-  "version": "0.1.0",
+  "name": "ng-rough-notation-workspace",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
