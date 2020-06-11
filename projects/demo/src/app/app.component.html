@@ -1,0 +1,63 @@
+<h1>
+	<span [roughNotation]="{ animationDelay: 800, animationDuration: 1500 }">
+		ng-rough-notation demo
+	</span>
+</h1>
+<h2>Types</h2>
+<div class="section types">
+	<div>
+		<span [roughNotation]="{ type: 'highlight' }" #highlight="roughNotation">
+			Highlight
+		</span>
+		<button (click)="highlight.toggle()">Toggle</button>
+	</div>
+	<div>
+		<span [roughNotation]="{ type: 'box' }" #box="roughNotation">Box</span>
+		<button (click)="box.toggle()">Toggle</button>
+	</div>
+	<div>
+		<span [roughNotation]="{ type: 'circle' }" #circle="roughNotation">Circle</span>
+		<button (click)="circle.toggle()">Toggle</button>
+	</div>
+	<div>
+		<span [roughNotation]="{ type: 'underline' }" #underline="roughNotation">Underline</span>
+		<button (click)="underline.toggle()">Toggle</button>
+	</div>
+	<div>
+		<span [roughNotation]="{ type: 'strike-through' }" #strikeThrough="roughNotation">
+			Strike-through
+		</span>
+		<button (click)="strikeThrough.toggle()">Toggle</button>
+	</div>
+	<div>
+		<span [roughNotation]="{ type: 'crossed-off' }" #crossedOff="roughNotation">
+			Crossed-off
+		</span>
+		<button (click)="crossedOff.toggle()">Toggle</button>
+	</div>
+</div>
+
+<h2>
+	Group
+	<button (click)="showGroup = !showGroup">Toggle group</button>
+</h2>
+<rough-notation-group [show]="showGroup" class="section group">
+	<div>
+		<span roughNotation>First</span>
+	</div>
+	<div>
+		<span [roughNotation]="{ type: 'underline' }">Second</span>
+	</div>
+</rough-notation-group>
+
+<h2>Color when annotated</h2>
+<div>
+	<span
+		[roughNotation]="{ type: 'highlight' }"
+		annotatedTextColor="red"
+		#highlightWithTextColor="roughNotation"
+	>
+		I can have specific text color, only when annotated
+	</span>
+	<button (click)="highlightWithTextColor.toggle()">Toggle</button>
+</div>

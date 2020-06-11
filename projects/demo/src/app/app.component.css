@@ -1,0 +1,29 @@
+.types {
+	padding-left: 2em;
+	border-left: 2px dashed #d8d8d8;
+}
+.group {
+	display: block;
+	width: 150px;
+	border: 2px solid #d8d8d8;
+	padding: 2em;
+	border-radius: 5px;
+}
+.section > div {
+	display: flex;
+	font-size: 24px;
+}
+.section > div:not(:last-child) {
+	margin-bottom: 1em;
+}
+
+button {
+	margin-left: 2em;
+}
+
+h2 {
+	margin-top: 2em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}

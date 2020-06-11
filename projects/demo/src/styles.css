@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+	padding: 2em;
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'San Francisco',
+		'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif;
+	background-color: ghostwhite;
+}
