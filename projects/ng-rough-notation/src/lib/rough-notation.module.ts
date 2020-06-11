@@ -4,11 +4,12 @@ import { RoughNotationDirective } from './rough-notation.directive';
 import { RoughNotationService } from './rough-notation.service';
 import { defaultConfig } from './utility';
 import { RoughAnnotationConfig } from 'rough-notation/lib/model';
+import { RoughNotationGroupComponent } from './rough-notation-group/rough-notation-group.component';
 
 @NgModule({
-	declarations: [RoughNotationDirective],
+	declarations: [RoughNotationDirective, RoughNotationGroupComponent],
 	imports: [CommonModule],
-	exports: [RoughNotationDirective],
+	exports: [RoughNotationDirective, RoughNotationGroupComponent],
 	providers: [
 		RoughNotationService,
 		{
