@@ -6,8 +6,6 @@ Simple and configurable directive to annotate an element.
 
 This is an Angular 9 wrapper for [rough-notation](https://roughnotation.com).
 
-[TOC]
-
 ## Demo
 
 [Demo page](https://ng-rough-notation-demo.stackblitz.io/)
@@ -54,13 +52,13 @@ The config object should represent a partial [RoughAnnotationConfigBase](https:
 
 | Property          | Type                                                         | Default value                             |
 | ----------------- | ------------------------------------------------------------ | ----------------------------------------- |
-| type              | `'underline' | 'box' | 'circle' | 'highlight' | 'strike-through' | 'crossed-off'` | `'highlight'`                             |
+| type              | `'underline'`, `'box'`, `'circle'`, `'highlight'`, `'strike-through'`, `'crossed-off'` | `'highlight'`             |
 | animate           | `boolean`                                                    | `true`                                    |
 | animationDuration | `number`                                                     | `800`                                     |
 | animationDelay    | `number`                                                     | `0`                                       |
 | color             | `string`                                                     | See [Automatic colors](#automatic-colors) |
 | strokeWidth       | `number`                                                     | `1`                                       |
-| padding           | `number | [number, number] | [number, number, number, number]` | `5`                                       |
+| padding           | `number`,  `[number, number]`, `[number, number, number, number]` | `5`                                       |
 | iterations        | `number`                                                     | `2`                                       |
 
 Please refer to the official doc for [property descriptions](https://github.com/pshihn/rough-notation#configuring-the-annotation).
@@ -69,7 +67,7 @@ Please refer to the official doc for [property descriptions](https://github.com/
 
 | Name                   | Type      | Default value | Description                                                  |
 | ---------------------- | --------- | ------------- | ------------------------------------------------------------ |
-| **annotateOnInit**     | `boolean` | `true`        | Specify if you want the element to be annotated when initialized. |
+| **show**               | `boolean` | `true`        | Sets the visibility of the annotation.                       |
 | **annotatedTextColor** | `boolean` | `true`        | Specify the CSS `color` value the element should have <u>only when it is annotated</u>. <br />Returns to its original color when the annotation is hidden. |
 
 #### Outputs
@@ -94,7 +92,7 @@ This is useful if you want to toggle programmatically the annotation.
 
 ## Automatic colors
 
-A set of default colors is defined for each annonation *type*. It follows the scheme on the [original website](https://roughnotation.com) so you can omit the *color* property if you're happy with the defaults. 
+A set of default colors is defined for each annotation *type*. It follows the scheme on the [original website](https://roughnotation.com) so you can omit the *color* property if you're happy with the defaults. 
 
 | Type           | Default color                                |
 | :------------- | -------------------------------------------- |

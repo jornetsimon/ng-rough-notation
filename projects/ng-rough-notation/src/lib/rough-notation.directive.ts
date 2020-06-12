@@ -19,6 +19,7 @@ import { Subscription } from 'rxjs';
 })
 export class RoughNotationDirective implements OnInit, OnDestroy {
 	private readonly initialTextColor: string;
+	private _show: boolean;
 	@Input('roughNotation')
 	set roughNotation(value: Partial<RoughAnnotationConfig> | string) {
 		if (typeof value === 'string') {
@@ -30,7 +31,15 @@ export class RoughNotationDirective implements OnInit, OnDestroy {
 			this.service.inputConfig = value;
 		}
 	}
-	@Input() annotateOnInit = true;
+	@Input()
+	set show(value: boolean) {
+		if (value === false || this.instance) {
+			this.setVisibility(value);
+		}
+	}
+	get show() {
+		return this._show;
+	}
 	@Input('instance')
 	get instance(): RoughAnnotation {
 		return this.service.instance;
@@ -50,6 +59,7 @@ export class RoughNotationDirective implements OnInit, OnDestroy {
 
 		this.showStateSubscription = this.service.visibilityState$.subscribe((state) => {
 			this.isShowingChange.emit(state);
+			this._show = state;
 
 			if (this.annotatedTextColor) {
 				// In case the user specified an annotation text color
@@ -62,7 +72,17 @@ export class RoughNotationDirective implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		// Instantiate RoughNotation
-		this.service.instantiate(this.hostElement.nativeElement, this.annotateOnInit);
+		this.service.instantiate(this.hostElement.nativeElement);
+		if (this._show !== false) {
+			this.setVisibility(true);
+		}
+	}
+
+	private setVisibility(show: boolean) {
+		if (this._show !== show) {
+			this.toggle();
+			this._show = show;
+		}
 	}
 
 	toggle() {

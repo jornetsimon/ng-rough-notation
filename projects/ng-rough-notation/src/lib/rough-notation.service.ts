@@ -31,16 +31,8 @@ export class RoughNotationService {
 
 	constructor(@Inject('DEFAULT_CONFIG') private defaultConfig: RoughAnnotationConfig) {}
 
-	instantiate(element: HTMLElement, showOnInit: boolean): RoughAnnotation {
+	instantiate(element: HTMLElement): RoughAnnotation {
 		this.instance = annotate(element, this.config);
-
-		if (showOnInit) {
-			// Timeout required for the first animation to be rendered correctly
-			setTimeout(() => {
-				this.toggleVisibility();
-			}, 5);
-		}
-
 		return this.instance;
 	}
 
