@@ -46,7 +46,7 @@
 		<span roughNotation>First</span>
 	</div>
 	<div>
-		<span [roughNotation]="{ type: 'underline' }">Second</span>
+		<span [roughNotation]="{ type: 'circle' }">Second</span>
 	</div>
 </rough-notation-group>
 
@@ -60,4 +60,20 @@
 		I can have specific text color, only when annotated
 	</span>
 	<button (click)="highlightWithTextColor.toggle()">Toggle</button>
+</div>
+
+<h2>Show control</h2>
+<div class="section">
+	<div class="flex-row">
+		<span [roughNotation]="{ type: 'box' }" [show]="binder">
+			My visibility is bound to a variable
+		</span>
+		<input type="checkbox" [(ngModel)]="binder" />
+	</div>
+	<div>
+		<span [roughNotation]="{ type: 'underline' }" #instance="roughNotation">
+			I am toggled from my instance
+		</span>
+		<button (click)="instance.toggle()">Toggle</button>
+	</div>
 </div>

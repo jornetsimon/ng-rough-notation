@@ -17,7 +17,8 @@
 	margin-bottom: 1em;
 }
 
-button {
+button,
+input {
 	margin-left: 2em;
 }
 

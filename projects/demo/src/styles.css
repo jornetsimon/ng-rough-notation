@@ -5,3 +5,8 @@ body {
 		'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif;
 	background-color: ghostwhite;
 }
+
+.flex-row {
+	display: flex;
+	align-items: center;
+}
