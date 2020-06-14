@@ -15,7 +15,7 @@ This is an Angular 9 wrapper for [rough-notation](https://roughnotation.com).
 ## Installation
 
 ```bash
-npm install ng-rough-notation
+npm install rough-notation ng-rough-notation
 ```
 
 Add `RoughNotationModule` to your module imports :
