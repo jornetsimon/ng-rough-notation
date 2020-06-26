@@ -44,6 +44,24 @@
 		</span>
 		<button (click)="bracket.toggle()">Toggle</button>
 	</div>
+	<div>
+		<p style="max-width: 700px;">
+			<strong>Multiline</strong>
+			<br />
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam neque ante, tristique
+			eget sem eu, faucibus porta ex. Mauris in feugiat justo, vel aliquam nulla.
+			<span
+				[roughNotation]="{ type: 'highlight', multiline: true }"
+				#multiline="roughNotation"
+				>Nullam iaculis, massa dignissim ultrices tincidunt, urna mi varius mi, eget
+				consequat sapien arcu et mi. Praesent mauris arcu, imperdiet sit amet ultricies in,
+				posuere ut nisl.
+			</span>
+			Suspendisse faucibus mauris at arcu ullamcorper posuere. Morbi eget arcu quis lectus
+			feugiat vulputate. Sed nec pulvinar sem, ut posuere lacus.
+		</p>
+		<button (click)="multiline.toggle()">Toggle</button>
+	</div>
 </div>
 
 <h2>

@@ -59,6 +59,7 @@ The config object should represent a partial [RoughAnnotationConfigBase](https:
 | color             | `string`                                                     | See [Automatic colors](#automatic-colors) |
 | strokeWidth       | `number`                                                     | `1`                                       |
 | padding           | `number`,  `[number, number]`, `[number, number, number, number]` | `5`                                       |
+| multiline         | `boolean`                                                    | `false`                                   |
 | iterations        | `number`                                                     | `2`                                       |
 | brackets          | `'left'`, `'right'`, `'top'`, `'bottom'`,  [...`'left'`, `'right'`, `'top'`, `'bottom'`] | `'right'`                                 |
 

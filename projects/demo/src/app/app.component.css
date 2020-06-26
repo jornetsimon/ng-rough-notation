@@ -11,6 +11,7 @@
 }
 .section > div {
 	display: flex;
+	align-items: center;
 	font-size: 24px;
 }
 .section > div:not(:last-child) {
