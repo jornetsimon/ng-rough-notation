@@ -1,6 +1,6 @@
 {
 	"name": "ng-rough-notation",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Angular directive wrapper for rough-notation",
 	"author": "Simon Jornet",
 	"keywords": [
@@ -15,11 +15,11 @@
 	"license": "MIT",
 	"homepage": "https://github.com/jornetsimon/ng-rough-notation",
 	"peerDependencies": {
-		"@angular/common": "^9.1.9",
-		"@angular/core": "^9.1.9"
+		"@angular/common": "~10.0.0",
+		"@angular/core": "~10.0.0"
 	},
 	"dependencies": {
-		"tslib": "^1.10.0",
-		"rough-notation": "^0.3.1"
+		"rough-notation": "^0.3.1",
+		"tslib": "^2.0.0"
 	}
 }
