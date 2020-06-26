@@ -7,6 +7,7 @@ export const defaultColors: Record<RoughAnnotationType, string> = {
 	'strike-through': '#1B5E1F',
 	underline: '#B71C1B',
 	'crossed-off': '#F57F17',
+	bracket: '#FF0000',
 };
 export const getDefaultTypeColor = (type: RoughAnnotationType): string => {
 	return defaultColors[type];

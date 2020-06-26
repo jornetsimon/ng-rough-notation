@@ -35,6 +35,15 @@
 		</span>
 		<button (click)="crossedOff.toggle()">Toggle</button>
 	</div>
+	<div>
+		<span
+			[roughNotation]="{ type: 'bracket', brackets: ['left', 'right'], padding: [2, 5] }"
+			#bracket="roughNotation"
+		>
+			Brackets
+		</span>
+		<button (click)="bracket.toggle()">Toggle</button>
+	</div>
 </div>
 
 <h2>

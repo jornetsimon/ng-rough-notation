@@ -52,7 +52,7 @@ The config object should represent a partial [RoughAnnotationConfigBase](https:
 
 | Property          | Type                                                         | Default value                             |
 | ----------------- | ------------------------------------------------------------ | ----------------------------------------- |
-| type              | `'underline'`, `'box'`, `'circle'`, `'highlight'`, `'strike-through'`, `'crossed-off'` | `'highlight'`             |
+| type              | `'underline'`, `'box'`, `'circle'`, `'highlight'`, `'strike-through'`, `'crossed-off'`, `'bracket'` | `'highlight'`                             |
 | animate           | `boolean`                                                    | `true`                                    |
 | animationDuration | `number`                                                     | `800`                                     |
 | animationDelay    | `number`                                                     | `0`                                       |
@@ -60,6 +60,7 @@ The config object should represent a partial [RoughAnnotationConfigBase](https:
 | strokeWidth       | `number`                                                     | `1`                                       |
 | padding           | `number`,  `[number, number]`, `[number, number, number, number]` | `5`                                       |
 | iterations        | `number`                                                     | `2`                                       |
+| brackets          | `'left'`, `'right'`, `'top'`, `'bottom'`,  [...`'left'`, `'right'`, `'top'`, `'bottom'`] | `'right'`                                 |
 
 Please refer to the official doc for [property descriptions](https://github.com/pshihn/rough-notation#configuring-the-annotation).
 
@@ -102,6 +103,7 @@ A set of default colors is defined for each annotation *type*. It follows the sc
 | strike-through | <span style="color:#1B5E1F">`#1B5E1F`</span> |
 | underline      | <span style="color:#B71C1B">`#B71C1B`</span> |
 | crossed-off    | <span style="color:#F57F17">`#F57F17`</span> |
+| bracket        | <span style="color:#FF0000">`#FF0000`</span> |
 
 ## Global configuration
 
@@ -111,8 +113,8 @@ For that you can use the `forRoot()` method on the module.
 
 ```typescript
 RoughNotationModule.forRoot({
-	type: 'circle',
-  animationDuration: 1000,
+    type: 'circle',
+    animationDuration: 1000,
 })
 ```
 
