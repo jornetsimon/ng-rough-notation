@@ -1,4 +1,5 @@
-import { RoughAnnotationConfig, RoughAnnotationType } from 'rough-notation/lib/model';
+import { RoughAnnotationType } from 'rough-notation/lib/model';
+import { RoughAnnotationConfig } from './rough-annotation-config';
 
 export const defaultColors: Record<RoughAnnotationType, string> = {
 	highlight: '#FFF176',

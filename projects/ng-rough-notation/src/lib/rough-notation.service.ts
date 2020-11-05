@@ -1,9 +1,10 @@
 import { Inject, Injectable } from '@angular/core';
-import { RoughAnnotation, RoughAnnotationConfig } from 'rough-notation/lib/model';
+import { RoughAnnotation } from 'rough-notation/lib/model';
 import { annotate } from 'rough-notation';
 import { Observable, Subject } from 'rxjs';
 import { filter, scan, tap } from 'rxjs/operators';
 import { getDefaultTypeColor } from './utility';
+import { RoughAnnotationConfig } from './rough-annotation-config';
 
 @Injectable()
 export class RoughNotationService {

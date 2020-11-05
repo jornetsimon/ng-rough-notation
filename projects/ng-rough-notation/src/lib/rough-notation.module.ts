@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RoughNotationDirective } from './rough-notation.directive';
 import { RoughNotationService } from './rough-notation.service';
 import { defaultConfig } from './utility';
-import { RoughAnnotationConfig } from 'rough-notation/lib/model';
 import { RoughNotationGroupComponent } from './rough-notation-group/rough-notation-group.component';
+import { RoughAnnotationConfig } from './rough-annotation-config';
 
 @NgModule({
 	declarations: [RoughNotationDirective, RoughNotationGroupComponent],

@@ -8,9 +8,10 @@ import {
 	Output,
 	Renderer2,
 } from '@angular/core';
-import { RoughAnnotation, RoughAnnotationConfig } from 'rough-notation/lib/model';
+import { RoughAnnotation } from 'rough-notation/lib/model';
 import { RoughNotationService } from './rough-notation.service';
 import { Subscription } from 'rxjs';
+import { RoughAnnotationConfig } from './rough-annotation-config';
 
 @Directive({
 	selector: '[roughNotation]',
@@ -74,7 +75,15 @@ export class RoughNotationDirective implements OnInit, OnDestroy {
 		// Instantiate RoughNotation
 		this.service.instantiate(this.hostElement.nativeElement);
 		if (this._show !== false) {
-			this.setVisibility(true);
+			const animationDelay = this.service.config.animationDelay;
+			if (animationDelay) {
+				// In case an animationDelay is specified
+				setTimeout(() => {
+					this.setVisibility(true);
+				}, animationDelay);
+			} else {
+				this.setVisibility(true);
+			}
 		}
 	}
 
