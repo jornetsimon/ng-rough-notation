@@ -4,7 +4,7 @@
 
 Simple and configurable directive to annotate an element.
 
-This is an Angular 10 wrapper for [rough-notation](https://roughnotation.com).
+This is an Angular 11 wrapper for [rough-notation](https://roughnotation.com).
 
 ## Demo
 
