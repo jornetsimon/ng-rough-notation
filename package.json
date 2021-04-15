@@ -1,13 +1,16 @@
 {
   "name": "ng-rough-notation-workspace",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lib:build:watch": "ng build ng-rough-notation --watch",
+    "lib:build:prod": "ng build ng-rough-notation --prod",
+    "lib:publish": "npm publish dist/ng-rough-notation"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +22,7 @@
     "@angular/platform-browser": "^11.0.5",
     "@angular/platform-browser-dynamic": "^11.0.5",
     "@angular/router": "^11.0.5",
-    "rough-notation": "^0.4.0",
+    "rough-notation": "~0.5.1",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

@@ -1,6 +1,6 @@
 {
 	"name": "ng-rough-notation",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "Angular directive wrapper for rough-notation",
 	"author": "Simon Jornet",
 	"keywords": [
@@ -19,7 +19,7 @@
 		"@angular/core": ">= 9"
 	},
 	"dependencies": {
-		"rough-notation": "^0.4.0",
+		"rough-notation": "~0.5.1",
 		"tslib": "^2.0.1"
 	}
 }
