@@ -15,8 +15,8 @@
 	"license": "MIT",
 	"homepage": "https://github.com/jornetsimon/ng-rough-notation",
 	"peerDependencies": {
-		"@angular/common": ">= 11",
-		"@angular/core": ">= 11"
+		"@angular/common": ">= 9",
+		"@angular/core": ">= 9"
 	},
 	"dependencies": {
 		"rough-notation": "^0.4.0",
