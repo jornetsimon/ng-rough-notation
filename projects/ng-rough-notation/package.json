@@ -8,7 +8,8 @@
 		"angular",
 		"annotate",
 		"rough",
-		"sketchy"
+		"sketchy",
+		"highlight"
 	],
 	"repository": "github:jornetsimon/ng-rough-notation",
 	"bugs": "https://github.com/jornetsimon/ng-rough-notation/issues",

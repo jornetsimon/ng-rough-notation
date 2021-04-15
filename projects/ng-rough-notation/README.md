@@ -1,10 +1,19 @@
 # ng-rough-notation
+![Licence](https://badgen.net/badge/license/MIT/blue)
+![NPM](https://badgen.net/npm/dw/ng-rough-notation)
+![Tree Shaking](https://badgen.net/bundlephobia/tree-shaking/ng-rough-notation)
+![Last commit](https://badgen.net/github/last-commit/jornetsimon/ng-rough-notation)
+
+〽️ A simple and configurable directive to annotate elements.
 
 ![Banner](https://i.imgur.com/IyoECHI.gif)
 
-Simple and configurable directive to annotate an element.
-
 This is an Angular 11 wrapper for [rough-notation](https://roughnotation.com).
+
+- 😌 **Easy to use**
+- 🪶 **Lightweight**
+- 🎨 **Customizable** : colors, duration, delay, padding...
+- ⚙️ **Convenient** : local & global config
 
 ## Demo
 
