@@ -1,6 +1,6 @@
 # ng-rough-notation
 
-![Banner](https://i.imgur.com/bBH3m5W.png)
+![Banner](https://i.imgur.com/IyoECHI.gif)
 
 Simple and configurable directive to annotate an element.
 
@@ -37,6 +37,7 @@ Use the `roughNotation` directive on any element :
  ``` html
 <span roughNotation>Some content</span>
  ```
+By default, _highlight_ will be used.
 
 #### Config object
 
@@ -46,7 +47,7 @@ You can provide a configuration object to the directive.
 <span [roughNotation]="{ type: 'highlight', color: '#F44336' }"></span>
  ```
 
-The config object should represent a partial [RoughAnnotationConfigBase](https://github.com/pshihn/rough-notation/blob/979cdd33d8825df4e0124de17e4e2433e1f6e4a6/src/model.ts#L16) interface.
+The config object should represent a partial [RoughAnnotationConfigBase](https://github.com/pshihn/rough-notation/blob/979cdd33d8825df4e0124de17e4e2433e1f6e4a6/src/model.ts#L16) interface.
 
 *Every property is optional since a default config is predefined.*
 
