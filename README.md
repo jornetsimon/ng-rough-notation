@@ -8,7 +8,7 @@
 
 ![Banner](https://i.imgur.com/IyoECHI.gif)
 
-This is an Angular 12 wrapper for [rough-notation](https://roughnotation.com).
+This is an Angular 13 wrapper for [rough-notation](https://roughnotation.com).
 
 - 😌 **Easy to use**
 - 🪶 **Lightweight**

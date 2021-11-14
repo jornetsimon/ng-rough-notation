@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lib:build:watch": "ng build ng-rough-notation --watch",
-    "lib:build:prod": "ng build ng-rough-notation --prod",
+    "lib:build:prod": "ng build ng-rough-notation --configuration production",
     "lib:publish": "npm publish dist/ng-rough-notation"
   },
   "private": true,
