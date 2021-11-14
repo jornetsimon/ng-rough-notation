@@ -1,6 +1,6 @@
 {
 	"name": "ng-rough-notation",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"description": "Angular directive wrapper for rough-notation",
 	"author": "Simon Jornet",
 	"keywords": [
